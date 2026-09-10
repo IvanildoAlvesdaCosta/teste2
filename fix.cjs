@@ -1,0 +1,1 @@
+const fs = require('fs'); ['teste1.astro','teste2.astro','teste3.astro'].forEach(f => { let p = 'src/pages/blog/'+f; let c = fs.readFileSync(p, 'utf8'); c = c.replace('<aside className="article-sidebar">', '</div>\n\n      <aside className="article-sidebar">'); fs.writeFileSync(p, c); })
